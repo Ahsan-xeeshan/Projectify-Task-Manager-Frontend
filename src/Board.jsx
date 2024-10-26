@@ -103,9 +103,9 @@ const Board = () => {
   function handleSearch(searchTerm) {
     const trimmedSearchTerm = searchTerm.trim();
     if (trimmedSearchTerm === "") {
-      setDisplayedTasks(state);
+      setDisplayedTasks(state.taskData);
     } else {
-      const filtered = state.filter((task) =>
+      const filtered = state.taskData.filter((task) =>
         task.taskName.toLowerCase().includes(trimmedSearchTerm.toLowerCase())
       );
       setDisplayedTasks(filtered);
